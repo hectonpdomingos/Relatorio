@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDDD598D-129B-44D3-82F2-3E76A68B8A83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Relatorio</RootNamespace>
+    <AssemblyName>Relatorio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\prgrelatorio-0.1\28-11-14\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>RelatorioOS</ProductName>
+    <PublisherName>Relatório - HPD</PublisherName>
+    <SuiteName>Programa de relatorio de OS</SuiteName>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>79491ED8929856A7CC7001F36D691489A057B070</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Relatorio_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IntelliTrace.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\MySql.Data.6.9.5\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="agendaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet1.cs">
+      <DependentUpon>agendaDataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="agendaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet11_ordem_de_servico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet11_ordem_de_servico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet2.cs">
+      <DependentUpon>agendaDataSet2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="agendaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSetcadcliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSetcadcliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSetcadfornecedor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSetcadfornecedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="agendaDataSetImprimirRelatorio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>agendaDataSetImprimirRelatorio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cadcliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadcliente.Designer.cs">
+      <DependentUpon>cadcliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadfornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadfornecedores.Designer.cs">
+      <DependentUpon>cadfornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cados.Designer.cs">
+      <DependentUpon>cados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadProdutos.Designer.cs">
+      <DependentUpon>CadProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conexao.cs" />
+    <Compile Include="ConexaoBancoMySQL.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet4_Editar_Os.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4_Editar_Os.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="editaros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editaros.Designer.cs">
+      <DependentUpon>editaros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="imprimirrelatorio2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imprimirrelatorio2.Designer.cs">
+      <DependentUpon>imprimirrelatorio2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modcadempresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modcadempresa.Designer.cs">
+      <DependentUpon>modcadempresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="start.Designer.cs">
+      <DependentUpon>start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TesteImagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TesteImagem.Designer.cs">
+      <DependentUpon>TesteImagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisitaTecnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitaTecnica.Designer.cs">
+      <DependentUpon>VisitaTecnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizar.Designer.cs">
+      <DependentUpon>visualizar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cadcliente.resx">
+      <DependentUpon>cadcliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadfornecedores.resx">
+      <DependentUpon>cadfornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cados.resx">
+      <DependentUpon>cados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadProdutos.resx">
+      <DependentUpon>CadProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editaros.resx">
+      <DependentUpon>editaros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imprimirrelatorio2.resx">
+      <DependentUpon>imprimirrelatorio2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modcadempresa.resx">
+      <DependentUpon>modcadempresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report12.rdlc" />
+    <EmbeddedResource Include="Report13.rdlc" />
+    <EmbeddedResource Include="Report14.rdlc" />
+    <EmbeddedResource Include="Report15.rdlc" />
+    <EmbeddedResource Include="Report16.rdlc" />
+    <EmbeddedResource Include="Report17.rdlc" />
+    <EmbeddedResource Include="Report18.rdlc" />
+    <EmbeddedResource Include="Report19.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report20.rdlc" />
+    <EmbeddedResource Include="Report21.rdlc" />
+    <EmbeddedResource Include="Report22.rdlc" />
+    <EmbeddedResource Include="Report23.rdlc" />
+    <EmbeddedResource Include="Report24.rdlc" />
+    <EmbeddedResource Include="Report25.rdlc" />
+    <EmbeddedResource Include="Report26.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="start.resx">
+      <DependentUpon>start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testederelatorio.rdlc" />
+    <EmbeddedResource Include="TesteImagem.resx">
+      <DependentUpon>TesteImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testereport.rdlc" />
+    <EmbeddedResource Include="VisitaTecnica.resx">
+      <DependentUpon>VisitaTecnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizar.resx">
+      <DependentUpon>visualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="agendaDataSet.xsc">
+      <DependentUpon>agendaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet.xss">
+      <DependentUpon>agendaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet1.xsc">
+      <DependentUpon>agendaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet1.xss">
+      <DependentUpon>agendaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet10.xsc">
+      <DependentUpon>agendaDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet10.xss">
+      <DependentUpon>agendaDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet11_ordem_de_servico.xsc">
+      <DependentUpon>agendaDataSet11_ordem_de_servico.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet11_ordem_de_servico.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet11_ordem_de_servico.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet11_ordem_de_servico.xss">
+      <DependentUpon>agendaDataSet11_ordem_de_servico.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet2.xsc">
+      <DependentUpon>agendaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet2.xss">
+      <DependentUpon>agendaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet3.xsc">
+      <DependentUpon>agendaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet3.xss">
+      <DependentUpon>agendaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet4.xsc">
+      <DependentUpon>agendaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet4.xss">
+      <DependentUpon>agendaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet5.xsc">
+      <DependentUpon>agendaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet5.xss">
+      <DependentUpon>agendaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet6.xsc">
+      <DependentUpon>agendaDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet6.xss">
+      <DependentUpon>agendaDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet7.xsc">
+      <DependentUpon>agendaDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet7.xss">
+      <DependentUpon>agendaDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet8.xsc">
+      <DependentUpon>agendaDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet8.xss">
+      <DependentUpon>agendaDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet9.xsc">
+      <DependentUpon>agendaDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSet9.xss">
+      <DependentUpon>agendaDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSetcadcliente.xsc">
+      <DependentUpon>agendaDataSetcadcliente.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSetcadcliente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSetcadcliente.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSetcadcliente.xss">
+      <DependentUpon>agendaDataSetcadcliente.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSetcadfornecedor.xsc">
+      <DependentUpon>agendaDataSetcadfornecedor.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSetcadfornecedor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSetcadfornecedor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSetcadfornecedor.xss">
+      <DependentUpon>agendaDataSetcadfornecedor.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSetImprimirRelatorio.xsc">
+      <DependentUpon>agendaDataSetImprimirRelatorio.xsd</DependentUpon>
+    </None>
+    <None Include="agendaDataSetImprimirRelatorio.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>agendaDataSetImprimirRelatorio.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="agendaDataSetImprimirRelatorio.xss">
+      <DependentUpon>agendaDataSetImprimirRelatorio.xsd</DependentUpon>
+    </None>
+    <None Include="App1.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4_Editar_Os.xsc">
+      <DependentUpon>DataSet4_Editar_Os.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet4_Editar_Os.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4_Editar_Os.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet4_Editar_Os.xss">
+      <DependentUpon>DataSet4_Editar_Os.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Relatorio_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.11.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Report Viewer 2012 Runtime</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IntelliTrace.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
